@@ -11,16 +11,16 @@ body {
 }
 main {
   margin: 0 auto;
-  max-width: 80vw;
+  max-width: 50vw;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
 }
 h1 {
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-weight: bold;
   border-bottom: solid 0.1vw rgb(205, 205, 205);
-  margin: 0.5vh 0 0.5vh 0;
+  margin: 1vh 0 1vh 0;
 }
 
 .accordion {
@@ -33,7 +33,7 @@ h1 {
 }
 .accordion:hover .icon {
   opacity: 1;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 }
 .accordion-item {
   display: block;
@@ -44,17 +44,25 @@ h1 {
   cursor: pointer;
 }
 .accordion-title {
-  font-size: 5vh;
+  width: 100%;
+  font-size: 2vh;
+  color: blue;
   font-weight: bold;
   margin: 0;
   cursor: pointer;
   padding: 0.5vh;
-  display: flex;
-  /* flex-direction: column; */
-
-  justify-content: space-between;
-  color: blue;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
+.accordion-title > .acc_img {
+  grid-column: 1/3;
+  justify-self: center;
+}
+.accordion-title > .icon {
+  grid-column: 2/3;
+  justify-self: end;
+}
+
 .accordion-input:checked + .accordion-title,
 .accordion-input:checked + .accordion-title:hover {
   color: black;
@@ -82,7 +90,7 @@ input[type="radio"] {
   opacity: 0;
 }
 
-.accordion-input:checked + .accordion-title > .icon {
+.accordion-input:hover + .accordion-title > .icon {
   display: inline-block;
   transform: rotate(45deg);
 }
@@ -90,7 +98,7 @@ input[type="radio"] {
   /* transform: scale(0); */
   height: 0;
   opacity: 0;
-  transition: 2s ease-in-out;
+  transition: 2s ease-out;
   text-align: center;
   /* margin: auto; */
 }
