@@ -5,6 +5,9 @@ body {
   background-color: antiquewhite;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1vh;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 main {
   margin: 0 auto;
@@ -24,6 +27,7 @@ h1 {
   width: 100%;
   margin: 0 auto;
 }
+
 .accordion:hover .accordion-title {
   color: black;
 }
@@ -46,10 +50,10 @@ h1 {
   cursor: pointer;
   padding: 0.5vh;
   display: flex;
-  align-items: center;
+  /* flex-direction: column; */
+
   justify-content: space-between;
   color: blue;
-  /* transition: 1s ease-in-out; */
 }
 .accordion-input:checked + .accordion-title,
 .accordion-input:checked + .accordion-title:hover {
@@ -57,24 +61,36 @@ h1 {
 }
 input[type="radio"] {
   display: none;
-  appearance: none; /*hide radio */
+  appearance: none; /*hide radiobutton */
   width: 0;
   height: 0;
 }
-.accordion-input:checked ~ .acc_img {
-  display: block;
-  transition-duration: 3s;
+.accordion-input:checked + .accordion-title > .acc_img {
+  height: 100%;
+
+  opacity: 1;
+  /* transform: scale(1); */
+  /* transition-duration: 3s; */
+}
+.accordion-title:hover > .acc_img {
+  height: 100%;
+  opacity: 1;
+  /* transform: scale(1); */
+  /* transition-duration: 3s; */
 }
 .icon {
   opacity: 0;
 }
 
-input:checked + .accordion-title > .icon {
+.accordion-input:checked + .accordion-title > .icon {
+  display: inline-block;
   transform: rotate(45deg);
 }
 .acc_img {
-  display: none;
+  /* transform: scale(0); */
+  height: 0;
+  opacity: 0;
+  transition: 2s ease-in-out;
   text-align: center;
-
   /* margin: auto; */
 }
