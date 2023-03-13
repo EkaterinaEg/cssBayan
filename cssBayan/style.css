@@ -78,6 +78,7 @@ h1 {
 .accordion-input:checked + .accordion-title {
   color: black;
 }
+
 /* ___________________________MEDIA____________ */
 @media (min-width: 320px) {
   main {
@@ -123,5 +124,8 @@ h1 {
   .accordion-input:checked + .accordion-title .icon {
     display: inline-block;
     transform: rotate(45deg);
+  }
+  .accordion-input:active + .accordion-title > .acc_img {
+    opacity: 0.3;
   }
 }
