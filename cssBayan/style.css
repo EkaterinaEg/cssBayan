@@ -125,7 +125,8 @@ h1 {
     display: inline-block;
     transform: rotate(45deg);
   }
-  .accordion-input:active + .accordion-title > .acc_img {
+  .accordion-input:active + .accordion-title > .acc_img,
+  .accordion-input:active + .accordion-title {
     opacity: 0.3;
   }
 }
